@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Upload Resume</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-role="student" data-page="resume-upload" data-protect="student">
+  <div id="app-header"></div>
+
+  <div class="container" style="padding: 18px 0;">
+    <div class="layout">
+      <aside id="app-sidebar" class="sidebar card"></aside>
+
+      <main class="content">
+        <div class="auth-guard hidden" data-auth-guard>
+          Please login as a Student to upload resumes. Redirecting...
+          <div class="btn-row" style="margin-top: 10px;">
+            <a class="btn btn-primary" href="student-login.html">Go to Student Login</a>
+          </div>
+        </div>
+
+        <div data-protected-content>
+          <div class="page-title">Resume Upload</div>
+          <p class="subtle">Upload a resume file (mock only). Then we’ll generate a verification score.</p>
+
+          <div style="height: 14px;"></div>
+
+          <div class="card">
+            <div class="card-inner">
+              <form id="resume-upload-form" novalidate>
+                <div class="input-grid">
+                  <div class="field">
+                    <label for="resumeTitle">Resume Title</label>
+                    <input id="resumeTitle" name="resumeTitle" type="text" placeholder="e.g., B.Tech Projects & Skills"
+                           required data-validate="required" />
+                    <div class="field-error" data-error-for="resumeTitle"></div>
+                  </div>
+
+                  <div class="field">
+                    <label for="targetJob">Target Job (optional but helpful)</label>
+                    <input id="targetJob" name="targetJob" type="text" placeholder="e.g., React Developer"
+                           required data-validate="minlen:3" />
+                    <div class="field-error" data-error-for="targetJob"></div>
+                  </div>
+
+                  <div class="field" style="grid-column: 1 / -1;">
+                    <label for="resumeFile">Resume File</label>
+                    <input id="resumeFile" name="resumeFile" type="file" accept=".pdf,.doc,.docx"
+                           required data-validate="required" />
+                    <div class="field-error" data-error-for="resumeFile"></div>
+                    <div class="subtle" style="margin-top: 10px; line-height: 1.5;">
+                      Frontend-only prototype: the file is not uploaded anywhere; we only store the filename/metadata in localStorage.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-message" role="status" aria-live="polite"></div>
+
+                <div class="btn-row">
+                  <button class="btn btn-primary" type="submit">Save Resume (Mock)</button>
+                  <a class="btn" href="candidate-details.html">Skip to Candidate Details</a>
+                  <a class="btn" href="verify-resume.html">Go to Verify Resume</a>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div style="height: 14px;"></div>
+
+          <div class="card">
+            <div class="card-inner">
+              <div class="page-title" style="font-size: 16px;">Backend Integration Hook</div>
+              <p class="subtle" style="margin-top: 6px; line-height: 1.55;">
+                Replace the submit handler to call your backend endpoint:
+                <span class="mono">POST /api/resumes/upload</span>
+                with the selected file + resume metadata.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <div id="app-footer"></div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

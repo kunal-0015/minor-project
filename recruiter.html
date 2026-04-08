@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recruiter Login</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div id="app-header"></div>
+
+  <div class="container" style="padding: 18px 0;">
+    <div class="card">
+      <div class="card-inner">
+        <div class="page-title">Recruiter Login</div>
+        <p class="subtle">Mock login (no backend). Used to unlock the Recruiter Dashboard.</p>
+
+        <div style="height: 14px;"></div>
+
+        <form id="recruiter-login-form" novalidate>
+          <div class="input-grid">
+            <div class="field">
+              <label for="recruiter-email">Email</label>
+              <input id="recruiter-email" name="email" type="email" placeholder="hr@company.com"
+                     required data-validate="email" />
+              <div class="field-error" data-error-for="email"></div>
+            </div>
+
+            <div class="field">
+              <label for="recruiter-password">Password</label>
+              <input id="recruiter-password" name="password" type="password" placeholder="Minimum 8 characters"
+                     required data-validate="password" />
+              <div class="field-error" data-error-for="password"></div>
+            </div>
+          </div>
+
+          <div class="form-message" role="status" aria-live="polite"></div>
+
+          <div class="btn-row">
+            <button class="btn btn-primary" type="submit">Login</button>
+            <a class="btn" href="recruiter-register.html">Create Account</a>
+            <a class="btn" href="index.html">Back to Home</a>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="app-footer"></div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

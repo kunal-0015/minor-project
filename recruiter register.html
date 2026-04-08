@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recruiter Register</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div id="app-header"></div>
+
+  <div class="container" style="padding: 18px 0;">
+    <div class="card">
+      <div class="card-inner">
+        <div class="page-title">Recruiter Registration</div>
+        <p class="subtle">Mock registration UI with form validation. No backend yet.</p>
+
+        <div style="height: 14px;"></div>
+
+        <form id="recruiter-register-form" novalidate>
+          <div class="input-grid">
+            <div class="field">
+              <label for="companyName">Company Name</label>
+              <input id="companyName" name="companyName" type="text" placeholder="Company name"
+                     required data-validate="required" />
+              <div class="field-error" data-error-for="companyName"></div>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="hr@company.com"
+                     required data-validate="email" />
+              <div class="field-error" data-error-for="email"></div>
+            </div>
+
+            <div class="field">
+              <label for="password">Password</label>
+              <input id="password" name="password" type="password" placeholder="Minimum 8 characters"
+                     required data-validate="password" />
+              <div class="field-error" data-error-for="password"></div>
+            </div>
+
+            <div class="field">
+              <label for="confirmPassword">Confirm Password</label>
+              <input id="confirmPassword" name="confirmPassword" type="password"
+                     placeholder="Re-enter password" required data-validate="confirm-password" />
+              <div class="field-error" data-error-for="confirmPassword"></div>
+            </div>
+
+            <div class="field">
+              <label for="industry">Industry</label>
+              <input id="industry" name="industry" type="text" placeholder="FinTech, HealthTech, SaaS..."
+                     required data-validate="minlen:3" />
+              <div class="field-error" data-error-for="industry"></div>
+            </div>
+
+            <div class="field">
+              <label for="country">Country</label>
+              <input id="country" name="country" type="text" placeholder="India"
+                     required data-validate="required" />
+              <div class="field-error" data-error-for="country"></div>
+            </div>
+          </div>
+
+          <div class="form-message" role="status" aria-live="polite"></div>
+
+          <div class="btn-row">
+            <button class="btn btn-primary" type="submit">Register</button>
+            <a class="btn" href="recruiter-login.html">I already have an account</a>
+          </div>
+        </form>
+
+        <div class="subtle" style="margin-top: 14px; line-height: 1.6;">
+          After backend integration, this can create recruiter accounts and allow job posting/reviewing.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="app-footer"></div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

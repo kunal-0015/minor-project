@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-role="student" data-page="student-dashboard" data-protect="student">
+  <div id="app-header"></div>
+
+  <div class="container" style="padding: 18px 0;">
+    <div class="layout">
+      <aside id="app-sidebar" class="sidebar card"></aside>
+
+      <main class="content">
+        <!-- Shown only when user is not logged in correctly -->
+        <div class="auth-guard hidden" data-auth-guard>
+          You need a Student login to access this page. Redirecting...
+          <div class="btn-row" style="margin-top: 10px;">
+            <a class="btn btn-primary" href="student-login.html">Go to Student Login</a>
+          </div>
+        </div>
+
+        <div data-protected-content>
+          <div class="page-title">Student Dashboard</div>
+          <p class="subtle">Track resume verification and view job matching results.</p>
+
+          <div style="height: 14px;"></div>
+
+          <div class="kpi-grid">
+            <div class="kpi">
+              <div class="label">Student</div>
+              <div class="value" id="student-name">—</div>
+            </div>
+            <div class="kpi">
+              <div class="label">Resume Status</div>
+              <div class="value" id="kpi-resume">—</div>
+            </div>
+            <div class="kpi">
+              <div class="label">Trust Score</div>
+              <div class="value" id="kpi-trust">—</div>
+            </div>
+            <div class="kpi">
+              <div class="label">Scoring Mode</div>
+              <div class="value" id="kpi-mode">—</div>
+            </div>
+          </div>
+
+          <div style="height: 14px;"></div>
+
+          <div class="grid-2">
+            <div class="card">
+              <div class="card-inner">
+                <div class="page-title" style="font-size: 16px;">Recent Actions</div>
+                <p class="subtle">Quick shortcuts for your next step.</p>
+                <div style="height: 10px;"></div>
+                <div id="recent-actions-root" class="list"></div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-inner">
+                <div class="page-title" style="font-size: 16px;">Recommended Next</div>
+                <p class="subtle">This UI uses mock logic until backend is connected.</p>
+                <div class="hr"></div>
+                <div class="list">
+                  <div class="list-item">
+                    <div class="title">Upload your resume</div>
+                    <div class="meta">Get ready for verification.</div>
+                    <div class="btn-row">
+                      <a class="btn btn-primary" href="resume-upload.html">Upload</a>
+                    </div>
+                  </div>
+                  <div class="list-item">
+                    <div class="title">Run verification</div>
+                    <div class="meta">Generates trust score used for matching.</div>
+                    <div class="btn-row">
+                      <a class="btn btn-good" href="verify-resume.html">Verify</a>
+                    </div>
+                  </div>
+                  <div class="list-item">
+                    <div class="title">View job match results</div>
+                    <div class="meta">Ranked jobs with match percentages.</div>
+                    <div class="btn-row">
+                      <a class="btn" href="job-match-result.html">Matches</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <div id="app-footer"></div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

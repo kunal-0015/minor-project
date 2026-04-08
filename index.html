@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Skill Verification & Job Matching</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <div id="app-header"></div>
+
+  <div class="container" style="padding: 12px 0 0 0;">
+    <div class="grid-2" style="margin-top: 10px; align-items: center;">
+      <div>
+        <span class="badge"><span class="badge-dot"></span> Decentralized Skill Verification (Prototype UI)</span>
+        <div style="height: 14px;"></div>
+        <h1 style="font-size: 34px; line-height: 1.1; margin: 0 0 12px 0;">
+          AI-powered verification.
+          <span style="color: var(--primary-2);">Better job matching.</span>
+        </h1>
+        <p class="subtle" style="font-size: 16px; line-height: 1.6;">
+          Verify resumes with mock trust scoring now (frontend only). Later, connect backend to real verification proofs and ranking logic.
+        </p>
+
+        <div class="btn-row">
+          <a class="btn btn-primary" href="student-login.html">Student Login</a>
+          <a class="btn" href="student-register.html">Student Register</a>
+          <a class="btn btn-primary" href="recruiter-login.html" style="border-color: rgba(138,124,255,.75);">Recruiter Login</a>
+          <a class="btn" href="recruiter-register.html">Recruiter Register</a>
+        </div>
+
+        <div style="height: 18px;"></div>
+
+        <div class="card">
+          <div class="card-inner">
+            <div class="page-title">How it works (Frontend Demo)</div>
+            <div class="list" style="margin-top: 12px;">
+              <div class="list-item">
+                <div class="title">1) Upload resume</div>
+                <div class="meta">A file chooser + form validation. Stored as mock metadata.</div>
+              </div>
+              <div class="list-item">
+                <div class="title">2) Verify resume</div>
+                <div class="meta">Trust score generated from candidate ID + file name (mock).</div>
+              </div>
+              <div class="list-item">
+                <div class="title">3) See job matches</div>
+                <div class="meta">Match percentages based on mock skills + trust score.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card">
+          <div class="card-inner">
+            <div class="page-title">Dashboard Preview</div>
+            <p class="subtle" style="margin-bottom: 12px;">
+              What students and recruiters see after login.
+            </p>
+
+            <div class="kpi-grid">
+              <div class="kpi">
+                <div class="label">UI Mode</div>
+                <div class="value">Prototype</div>
+              </div>
+              <div class="kpi">
+                <div class="label">Backend</div>
+                <div class="value">Not Connected</div>
+              </div>
+              <div class="kpi">
+                <div class="label">Scoring</div>
+                <div class="value">Mock</div>
+              </div>
+              <div class="kpi">
+                <div class="label">Data</div>
+                <div class="value">localStorage</div>
+              </div>
+            </div>
+
+            <div class="hr"></div>
+
+            <div class="list">
+              <div class="list-item">
+                <div class="title">Student flow</div>
+                <div class="meta">Dashboard → Upload → Verify → Matches</div>
+                <div class="btn-row" style="margin-top: 10px;">
+                  <a class="btn btn-good" href="student-login.html">Try Student</a>
+                </div>
+              </div>
+              <div class="list-item">
+                <div class="title">Recruiter flow</div>
+                <div class="meta">Dashboard → Candidate Details → Verify → Matches</div>
+                <div class="btn-row" style="margin-top: 10px;">
+                  <a class="btn btn-good" href="recruiter-login.html">Try Recruiter</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div style="height: 14px;"></div>
+
+        <div class="auth-guard" style="border-color: rgba(109,94,252,.35); background: rgba(109,94,252,.12);">
+          <b>Note:</b> This is HTML/CSS/JS only. The UI is ready for backend integration later.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="app-footer"></div>
+
+  <!-- app.js is shared across pages -->
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

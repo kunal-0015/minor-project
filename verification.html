@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Verify Resume</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-page="verify-resume" data-protect="any">
+  <div id="app-header"></div>
+
+  <div class="container" style="padding: 18px 0;">
+    <div class="layout">
+      <aside id="app-sidebar" class="sidebar card"></aside>
+
+      <main class="content">
+        <div class="auth-guard hidden" data-auth-guard>
+          Please login (Student or Recruiter) to verify resumes. Redirecting...
+          <div class="btn-row" style="margin-top: 10px;">
+            <a class="btn btn-primary" href="student-login.html">Student Login</a>
+            <a class="btn btn-primary" href="recruiter-login.html">Recruiter Login</a>
+          </div>
+        </div>
+
+        <div data-protected-content>
+          <div class="page-title">Verify Resume</div>
+          <p class="subtle">Frontend-only mock verification. Generates a trust score used for job matching.</p>
+
+          <div style="height: 14px;"></div>
+
+          <div class="card">
+            <div class="card-inner">
+              <div id="verify-candidate-summary" class="hidden">
+                <div class="page-title" style="font-size: 16px;">Verification Context</div>
+                <p class="subtle" style="margin-top: 8px;">
+                  Candidate: <b><span data-candidate-name></span></b> · ID: <span class="mono" data-candidate-id></span>
+                </p>
+                <p class="subtle" style="margin-top: 6px;">
+                  Resume File: <span class="mono" data-resume-filename></span>
+                </p>
+              </div>
+
+              <div class="hr"></div>
+
+              <div class="grid-2">
+                <div>
+                  <div class="page-title" style="font-size: 16px;">Run Verification</div>
+                  <p class="subtle" style="margin-top: 6px; line-height: 1.55;">
+                    When backend is integrated, this button can call a verification pipeline:
+                    parse resume → extract skills → check proofs → compute trust score.
+                  </p>
+
+                  <div class="btn-row" style="margin-top: 12px;">
+                    <button class="btn btn-primary" id="btn-run-verification" type="button">
+                      Run Verification (Mock)
+                    </button>
+                    <a class="btn" href="candidate-details.html">Back to Candidate Details</a>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="page-title" style="font-size: 16px;">Progress</div>
+                  <div id="verification-progress" style="margin-top: 10px;">
+                    <div class="progress"><div style="width: 0%;"></div></div>
+                    <div class="subtle" data-progress-text style="margin-top: 8px;">Verification: 0%</div>
+                  </div>
+
+                  <div class="subtle" style="margin-top: 12px; line-height: 1.6;">
+                    No backend calls are made in this prototype.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="height: 14px;"></div>
+
+          <div id="verification-result-root" class="hidden"></div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <div id="app-footer"></div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Candidate Details</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-page="candidate-details" data-protect="any">
+  <div id="app-header"></div>
+
+  <div class="container" style="padding: 18px 0;">
+    <div class="layout">
+      <aside id="app-sidebar" class="sidebar card"></aside>
+
+      <main class="content">
+        <div class="auth-guard hidden" data-auth-guard>
+          Please login (Student or Recruiter) to access candidate details. Redirecting...
+          <div class="btn-row" style="margin-top: 10px;">
+            <a class="btn btn-primary" href="student-login.html">Student Login</a>
+            <a class="btn btn-primary" href="recruiter-login.html">Recruiter Login</a>
+          </div>
+        </div>
+
+        <div data-protected-content>
+          <div class="page-title">Candidate Details</div>
+          <p class="subtle">Load mock candidate data, then verify their resume and generate job match results.</p>
+
+          <div style="height: 14px;"></div>
+
+          <div class="card">
+            <div class="card-inner">
+              <div class="input-grid" style="align-items: end;">
+                <div class="field">
+                  <label for="candidate-id-input">Candidate ID</label>
+                  <input id="candidate-id-input" type="text" placeholder="e.g., CND-1029" />
+                  <div class="subtle" style="margin-top: 8px;">Tip: You can type any ID. UI will generate deterministic mock data.</div>
+                </div>
+
+                <div class="btn-row" style="margin-top: 0;">
+                  <button class="btn btn-primary" id="btn-load-candidate" type="button">Load Candidate</button>
+                  <a class="btn" href="resume-upload.html">Upload Resume (Student)</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div style="height: 14px;"></div>
+
+          <div id="candidate-details-root"></div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <div id="app-footer"></div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

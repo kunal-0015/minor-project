@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Job Match Result</title>
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body data-page="job-match-result" data-protect="any">
+  <div id="app-header"></div>
+
+  <div class="container" style="padding: 18px 0;">
+    <div class="layout">
+      <aside id="app-sidebar" class="sidebar card"></aside>
+
+      <main class="content">
+        <div class="auth-guard hidden" data-auth-guard>
+          Please login (Student or Recruiter) to view job match results. Redirecting...
+          <div class="btn-row" style="margin-top: 10px;">
+            <a class="btn btn-primary" href="student-login.html">Student Login</a>
+            <a class="btn btn-primary" href="recruiter-login.html">Recruiter Login</a>
+          </div>
+        </div>
+
+        <div data-protected-content>
+          <div class="page-title">Job Match Result</div>
+          <p class="subtle">Mock ranked results based on candidate skills and verification trust score.</p>
+
+          <div style="height: 14px;"></div>
+
+          <div id="job-match-root"></div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <div id="app-footer"></div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
